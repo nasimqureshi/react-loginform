@@ -4,14 +4,18 @@ const App = () => {
   const [fullName, setFullName] = useState({
     fname: '',
     lName: '',
+    email: '',
+    phone: ''
   });
 
   const inputEvent = (event ) => {
-    console.log(event.target.value)
+   console.log(event.target.value)
     console.log(event.target.name)
     
-    const value = event.target.value;
-    const name = event.target.name;
+    //const value = event.target.value;
+    //const name = event.target.name;
+
+    const { value, name } = event.target;
 
     setFullName((preValue) => {
       if(name === 'fName'){
@@ -24,6 +28,17 @@ const App = () => {
           fname: preValue.fname,
           lname: value
         }
+      } else if(name === 'email'){
+        return {
+          fname: preValue.fname,
+          lname: value
+        }
+      } else if(name === 'phone'){
+        return {
+          fname: preValue.fname,
+          lname: value
+        }
+
       }
     })
   }
@@ -48,7 +63,19 @@ const App = () => {
     placeholder="Enter Your Last Name"
     name='lName'
     onChange={inputEvent} 
-    value= {fullName.lName}/>
+    value= {fullName.lName}
+    />
+    <input type="email" 
+    placeholder="Enter Your Email Address"
+    name='email'
+    onChange={inputEvent} 
+    value= {fullName.email}
+    />
+    <input type="number" 
+    placeholder="Enter Your Phone Number"
+    name='phone'
+    onChange={inputEvent} 
+    value= {fullName.phone}/>
       <button type="submit">
         Submit Me
       </button>
