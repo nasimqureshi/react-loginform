@@ -22,21 +22,29 @@ const App = () => {
         return {
           fname: value,
           lname: preValue.lname,
+          email: preValue.email,
+          phone: preValue.phone,
         }
       } else if(name === 'lName'){
         return {
           fname: preValue.fname,
-          lname: value
+          lname: value,
+          email: preValue.email,
+          phone: preValue.phone,
         }
       } else if(name === 'email'){
         return {
           fname: preValue.fname,
-          lname: value
+          lname: preValue.lname,
+          lname: value,
+          phone: preValue.phone,
         }
       } else if(name === 'phone'){
         return {
           fname: preValue.fname,
-          lname: value
+          lname: preValue.lname,
+          email: preValue.email,
+          phone: value,
         }
 
       }
